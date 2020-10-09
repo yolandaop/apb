@@ -1,0 +1,119 @@
+body {
+	background-color: #CCC;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size: auto;
+}
+.main {
+	background-color: #ffffff;
+  width: 100%;
+	margin: 0 auto;
+	border: 0.063em ;
+	-moz-box-shadow: -5px -5px 5px #888;
+	-webkit-box-shadow: -5px -5px 5px #888;
+	box-shadow: -5px -5px 5px #888;
+}
+header {
+    background-image: url(../img/header.png);
+    width: 100%;
+    height: 23em;
+}
+.isi{
+    width: 83%;
+    margin-left: 17em;
+
+}
+#tanggal{
+    /* background-image:url(../images/menu-atas.gif); */
+    background-color: #ebce39;
+	text-shadow: #0FF;
+	border: 0.063em solid #000;
+	padding:0.500em;
+	padding-bottom:0.500em;
+}
+#footer {
+	background-color:#333;
+	font-size:12px;
+	font:Tahoma, Geneva, sans-serif;
+	color:#FFF;
+	border: 1px solid #FFF;
+	padding:20px;
+}
+.clear {
+	clear:both;
+	float:none;
+}
+.sidebar-container {
+    position: absolute;
+    width: 15%;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #030303;
+    color: #fff;
+  }
+  
+  .sidebar-logo {
+    padding: 0.625em 0.938em 0.625em 1.875em;
+    font-size: auto;
+    background-color: #2574A9;
+  }
+  
+  .sidebar-navigation {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+  }
+  
+  .sidebar-navigation li {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 1.250em;
+  }
+  
+  .sidebar-navigation li a {
+    padding: 0.625em 0.938em 0.625em 1.875em;
+    display: block;
+    color: #fff;
+  }
+  
+  .sidebar-navigation li .fa {
+    margin-right: 0.625em;
+  }
+  
+  .sidebar-navigation li a:active,
+  .sidebar-navigation li a:hover,
+  .sidebar-navigation li a:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .sidebar-navigation li::before {
+    background-color: #2574A9;
+    position: absolute;
+    content: '';
+    height: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 0.188em;
+    z-index: -1;
+  }
+  
+  .sidebar-navigation li:hover::before {
+    width: 100%;
+  }
+  
+  .sidebar-navigation .header {
+    font-size: auto;
+    text-transform: uppercase;
+    background-color: #151515;
+    padding: 0.625em 0.938em 0.625em 1.875em;
+  }
+  
+  .sidebar-navigation .header::before {
+    background-color: transparent;
+  }
