@@ -3,14 +3,14 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a  href="<?php echo base_url('transaksi'); ?>">Peminjaman Individu</a></li>
+            <li><a  href="<?php print_r base_url('transaksi'); ?>">Peminjaman Individu</a></li>
             <li class="active">Tambah</li>
         </ol>
         <?php
-                    echo validation_errors();
+                    print_r validation_errors();
                     //buat message nis
                     if(!empty($message)) {
-                    echo $message;
+                    print_r $message;
                     }
                 ?>
 
@@ -27,14 +27,14 @@
             <?php
                         //validasi error upload
                         if(!empty($error)) {
-                            echo $error;
+                            print_r $error;
                         }
                     ?>
-                <form class="form-horizontal" action="<?php echo site_url('transaksi/simpan');?>" method="post">
+                <form class="form-horizontal" action="<?php print_r site_url('transaksi/simpan');?>" method="post">
                         <div class="form-group">
                             <label class="col-lg-4 ">Id. Transaksi</label>
                             <div class="col-lg-7">
-                                <input type="text" id="id_transaksi" name="id_transaksi" class="form-control" value="<?php echo $autonumber ?>" readonly="readonly">
+                                <input type="text" id="id_transaksi" name="id_transaksi" class="form-control" value="<?php print_r $autonumber ?>" readonly="readonly">
                             </div>
                         </div>
                         
@@ -42,42 +42,42 @@
                             <label class="col-lg-4 ">Tanggal Pinjam</label>
                             <div class="col-lg-7">
                                 <input type="text" id="tanggal" name="tanggal" class="form-control" value="<?php 
-                                echo $tglpinjam; ?>" readonly="readonly">
+                                print_r $tglpinjam; ?>" readonly="readonly">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4 ">Nama</label>
                             <div class="col-lg-4">
-                                <input list="nama" autocomplete="off" placeholder="Ketikan Nama" name="nama" class="form-control" value="<?php echo set_value('nama'); ?>">
+                                <input list="nama" autocomplete="off" placeholder="Ketikan Nama" name="nama" class="form-control" value="<?php print_r set_value('nama'); ?>">
                                 <datalist id="nama">
                                 <?php 
                                 foreach($anggota as $row) {
                                 ?>
-                                <option value="<?php echo $row->nama;?>"><?php echo $row->nama;?></option>
+                                <option value="<?php print_r $row->nama;?>"><?php print_r $row->nama;?></option>
                                 <?php } ?> 
                                 </datalist>
                             </div>
                             <label class="col-lg-1">NIS</label>
                             <div class="col-lg-2">
-                            <input type="text" class="form-control"  id="nis" name="nis"  value="<?php echo set_value('nis'); ?>" readonly="readonly">
+                            <input type="text" class="form-control"  id="nis" name="nis"  value="<?php print_r set_value('nis'); ?>" readonly="readonly">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-4 ">Judul</label>
                             <div class="col-lg-4">
-                            <input list="judul" autocomplete="off" placeholder="Ketikan Judul" name="judul" class="form-control" value="<?php echo set_value('judul'); ?>">
+                            <input list="judul" autocomplete="off" placeholder="Ketikan Judul" name="judul" class="form-control" value="<?php print_r set_value('judul'); ?>">
                                 <datalist id="judul">
                                 <?php 
                                 foreach($buku as $row) {
                                 ?>
-                                <option value="<?php echo $row->judul;?>"><?php echo $row->judul;?></option>
+                                <option value="<?php print_r $row->judul;?>"><?php print_r $row->judul;?></option>
                                 <?php } ?> 
                                 </datalist>
                             </div>
                             <label class="col-lg-1">Bibid</label>
                             <div class="col-lg-2">
-                            <input type="text" class="form-control"  id="bibid" name="bibid"  value="<?php echo set_value('bibid'); ?>" readonly="readonly">
+                            <input type="text" class="form-control"  id="bibid" name="bibid"  value="<?php print_r set_value('bibid'); ?>" readonly="readonly">
                             </div>
                         </div>
     
@@ -96,21 +96,21 @@
 <!-- /.end row -->
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
@@ -126,7 +126,7 @@ $(document).ready(function() {
     //load data tmp 
     function loadData()
     {
-        $("#tampil").load("<?php echo site_url('transaksi/tampil_tmp') ?>");
+        $("#tampil").load("<?php print_r site_url('transaksi/tampil_tmp') ?>");
     }
     loadData();
 
@@ -152,7 +152,7 @@ $(document).ready(function() {
         var caribuku = $('#caribuku').val();
 
          $.ajax({
-            url:"<?php echo site_url('transaksi/cari_buku');?>",
+            url:"<?php print_r site_url('transaksi/cari_buku');?>",
             type:"POST",
             data:"caribuku="+caribuku,
             cache:false,
@@ -189,7 +189,7 @@ $(document).ready(function() {
             var judul = $(this).val();
 
             $.ajax({
-                url:"<?php echo site_url('buku/cari_judul');?>",
+                url:"<?php print_r site_url('buku/cari_judul');?>",
                 type:"POST",
                 data:"judul="+judul,
                 cache:false,
@@ -217,7 +217,7 @@ $(document).ready(function() {
             var nama = $(this).val();
 
             $.ajax({
-                url:"<?php echo site_url('transaksi/cari_nama');?>",
+                url:"<?php print_r site_url('transaksi/cari_nama');?>",
                 type:"POST",
                 data:"nama="+nama,
                 cache:false,
@@ -261,7 +261,7 @@ $(document).ready(function() {
     //     }
     //     else{
     //         $.ajax({
-    //             url:"<?php echo site_url('transaksi/save_tmp');?>",
+    //             url:"<?php print_r site_url('transaksi/save_tmp');?>",
     //             type:"POST",
     //             data:"bibid="+bibid+"&judul="+judul,
     //             cache:false,
@@ -282,7 +282,7 @@ $(document).ready(function() {
         //ambil dulu atribute kodenya
         var bibid = $(this).attr('kode');
         $.ajax({
-            url:"<?php echo site_url('transaksi/hapus_tmp');?>",
+            url:"<?php print_r site_url('transaksi/hapus_tmp');?>",
             type:"POST",
             data:"bibid="+bibid,
             cache:false,
@@ -313,7 +313,7 @@ $(document).ready(function() {
     //     }
     //     else{
     //         $.ajax({
-    //             url:"<?php echo site_url('transaksi_kelas/simpan_transaksi');?>",
+    //             url:"<?php print_r site_url('transaksi_kelas/simpan_transaksi');?>",
     //             type:"POST",
     //             data:"no_transaksi="+no_transaksi+"&tgl_pinjam="+tgl_pinjam+
     //             "&nama="+nama+"&jumlah="+jumlah,

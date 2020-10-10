@@ -3,14 +3,14 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('transaksi_kelas'); ?>">Peminjaman Kelas</a></li>
+            <li><a href="<?php print_r base_url('transaksi_kelas'); ?>">Peminjaman Kelas</a></li>
             <li class="active">Data</li>
         </ol>
 
         <?php
             
             if(!empty($message)) {
-                echo $message;
+                print_r $message;
             }
         ?>
 
@@ -20,7 +20,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-    <?php echo anchor('transaksi_kelas/peminjaman', 'Tambah Peminjaman', array('class' => 'btn btn-primary btn-sm')); ?>
+    <?php print_r anchor('transaksi_kelas/peminjaman', 'Tambah Peminjaman', array('class' => 'btn btn-primary btn-sm')); ?>
         <br /><br />
         <div class="panel panel-default">
 
@@ -50,17 +50,17 @@
                                 foreach($transaksi_kelas->result() as $row) {
                                 ?>
                                     <tr>    
-                                        <td><?php echo $no;?></td>
-                                        <td><?php echo $row->id_transaksi;?></td>
-                                        <td><?php echo $row->bibid;?></td>
-                                        <td><?php echo $row->judul;?></td>
-                                        <td><?php echo $row->kelas;?></td>
-                                        <td><?php echo $row->nama;?></td>
-                                        <td><?php echo $row->nis;?></td>
-                                        <td><?php echo $row->tanggal;?></td>
-                                        <td><?php echo $row->jumlah;?></td>
+                                        <td><?php print_r $no;?></td>
+                                        <td><?php print_r $row->id_transaksi;?></td>
+                                        <td><?php print_r $row->bibid;?></td>
+                                        <td><?php print_r $row->judul;?></td>
+                                        <td><?php print_r $row->kelas;?></td>
+                                        <td><?php print_r $row->nama;?></td>
+                                        <td><?php print_r $row->nis;?></td>
+                                        <td><?php print_r $row->tanggal;?></td>
+                                        <td><?php print_r $row->jumlah;?></td>
                                         <td class="text-center">
-                                        <a href="<?php echo base_url('transaksi_kelas/kembali/'.$row->id_transaksi) ?>"><input type="submit" class="btn btn-success btn-xs" name="kembali" value="Kembali"></a>
+                                        <a href="<?php print_r base_url('transaksi_kelas/kembali/'.$row->id_transaksi) ?>"><input type="submit" class="btn btn-success btn-xs" name="kembali" value="Kembali"></a>
                                  </td>
                                     </tr>
                                 <?php $no++; } ?>    
@@ -77,21 +77,21 @@
 </div>
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
@@ -122,12 +122,12 @@ $(document).ready(function() {
             var kode=$("#idhapus").val();
             
             $.ajax({
-                url:"<?php echo site_url('transaksi/kembali');?>",
+                url:"<?php print_r site_url('transaksi/kembali');?>",
                 type:"POST",
                 data:"kode="+kode,
                 cache:false,
                 success:function(html){
-                    location.href="<?php echo site_url('anggota/index/delete-success');?>";
+                    location.href="<?php print_r site_url('anggota/index/delete-success');?>";
                 }
             });
         });

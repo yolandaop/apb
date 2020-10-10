@@ -3,7 +3,7 @@
 	<title>Form Import</title>
 
 	<!-- Load File jquery.min.js yang ada difolder js -->
-	<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+	<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 	<script>
 	$(document).ready(function(){
@@ -16,12 +16,12 @@
 	<h3>Form Import</h3>
 	<hr>
 
-	<a href="<?php echo base_url("excel/format.xlsx"); ?>">Download Format</a>
+	<a href="<?php print_r base_url("excel/format.xlsx"); ?>">Download Format</a>
 	<br>
 	<br>
 
 	<!-- Buat sebuah tag form dan arahkan action nya ke controller ini lagi -->
-	<form method="post" action="<?php echo base_url("Siswa/form"); ?>" enctype="multipart/form-data">
+	<form method="post" action="<?php print_r base_url("Siswa/form"); ?>" enctype="multipart/form-data">
 		<!--
 		-- Buat sebuah input type file
 		-- class pull-left berfungsi agar file input berada di sebelah kiri
@@ -37,19 +37,19 @@
 	<?php
 	if(isset($_POST['preview'])){ // Jika user menekan tombol Preview pada form
 		if(isset($upload_error)){ // Jika proses upload gagal
-			echo "<div style='color: red;'>".$upload_error."</div>"; // Muncul pesan error upload
+			print_r "<div style='color: red;'>".$upload_error."</div>"; // Muncul pesan error upload
 			die; // stop skrip
 		}
 
 		// Buat sebuah tag form untuk proses import data ke database
-		echo "<form method='post' action='".base_url("Siswa/import")."'>";
+		print_r "<form method='post' action='".base_url("Siswa/import")."'>";
 
 		// Buat sebuah div untuk alert validasi kosong
-		echo "<div style='color: red;' id='kosong'>
+		print_r "<div style='color: red;' id='kosong'>
 		Semua data belum diisi, Ada <span id='jumlah_kosong'></span> data yang belum diisi.
 		</div>";
 
-		echo "<table border='1' cellpadding='8'>
+		print_r "<table border='1' cellpadding='8'>
 		<tr>
 			<th colspan='5'>Preview Data</th>
 		</tr>
@@ -91,18 +91,18 @@
 					$kosong++; // Tambah 1 variabel $kosong
 				}
 
-				echo "<tr>";
-				echo "<td".$nis_td.">".$nis."</td>";
-				echo "<td".$nama_td.">".$nama."</td>";
-				echo "<td".$jk_td.">".$jenis_kelamin."</td>";
-				echo "<td".$alamat_td.">".$alamat."</td>";
-				echo "</tr>";
+				print_r "<tr>";
+				print_r "<td".$nis_td.">".$nis."</td>";
+				print_r "<td".$nama_td.">".$nama."</td>";
+				print_r "<td".$jk_td.">".$jenis_kelamin."</td>";
+				print_r "<td".$alamat_td.">".$alamat."</td>";
+				print_r "</tr>";
 			}
 
 			$numrow++; // Tambah 1 setiap kali looping
 		}
 
-		echo "</table>";
+		print_r "</table>";
 
 		// Cek apakah variabel kosong lebih dari 0
 		// Jika lebih dari 0, berarti ada data yang masih kosong
@@ -111,21 +111,21 @@
 			<script>
 			$(document).ready(function(){
 				// Ubah isi dari tag span dengan id jumlah_kosong dengan isi dari variabel kosong
-				$("#jumlah_kosong").html('<?php echo $kosong; ?>');
+				$("#jumlah_kosong").html('<?php print_r $kosong; ?>');
 
 				$("#kosong").show(); // Munculkan alert validasi kosong
 			});
 			</script>
 		<?php
 		}else{ // Jika semua data sudah diisi
-			echo "<hr>";
+			print_r "<hr>";
 
 			// Buat sebuah tombol untuk mengimport data ke database
-			echo "<button type='submit' name='import'>Import</button>";
-			echo "<a href='".base_url("Siswa")."'>Cancel</a>";
+			print_r "<button type='submit' name='import'>Import</button>";
+			print_r "<a href='".base_url("Siswa")."'>Cancel</a>";
 		}
 
-		echo "</form>";
+		print_r "</form>";
 	}
 	?>
 </body>

@@ -61,7 +61,7 @@ class Anggota extends CI_Controller {
         //jika ada data anggota
         if($cari->num_rows() > 0) {
             $danggota = $cari->row_array();
-            echo $danggota['nama'];
+            print_r $danggota['nama'];
         }
     }
 
@@ -73,7 +73,7 @@ class Anggota extends CI_Controller {
 
             //apabila user mengkosongkan form input
             if($this->form_validation->run()==true){
-                // echo "masuk"; die();
+                // print_r "masuk"; die();
                 $nis = $this->input->post('nis');
                 $cek = $this->Mod_anggota->cekAnggota($nis);
                 //cek nis yg sudah digunakan
@@ -99,7 +99,7 @@ class Anggota extends CI_Controller {
               
                         );
                         $this->Mod_anggota->insertAnggota("anggoa", $save);
-                        //echo "berhasil"; die();
+                        //print_r "berhasil"; die();
                         redirect('anggota/index/create-success');
                                 $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
@@ -131,7 +131,7 @@ class Anggota extends CI_Controller {
                 
                 //apabila user mengkosongkan form input
                 if($this->form_validation->run()==true){
-                    // echo "masuk"; die();
+                    // print_r "masuk"; die();
                     
                     $nis = $this->input->post('nis');
                     
@@ -147,7 +147,7 @@ class Anggota extends CI_Controller {
                             'orangtua' => $this->input->post('orangtua')
                         );
                         $this->Mod_anggota->updateAnggota($nis, $save);
-                        // echo "berhasil"; die();
+                        // print_r "berhasil"; die();
                         redirect('anggota/index/update-success');
 
                    
@@ -176,7 +176,7 @@ class Anggota extends CI_Controller {
 
         $nis = $this->input->post('kode');
         $this->Mod_anggota->deleteAnggota($nis, 'anggota');
-        // echo "berhasil"; die();
+        // print_r "berhasil"; die();
         redirect('anggota/index/delete-success');
         
     }

@@ -3,15 +3,15 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('anggota/index'); ?>">Anggota</a></li>
+            <li><a href="<?php print_r base_url('anggota/index'); ?>">Anggota</a></li>
             <li class="active">Create Anggota</li>
         </ol>
 
         <?php
-            echo validation_errors();
+            print_r validation_errors();
             //buat message nis
             if(!empty($message)) {
-            echo $message;
+            print_r $message;
             }
         ?>
 
@@ -32,16 +32,16 @@
             <?php
                 //validasi error upload
                 if(!empty($error)) {
-                    echo $error;
+                    print_r $error;
                 }
             ?>
-            <?php echo form_open_multipart('anggota/insert', array('class' => 'form-horizontal', 'id' => 'jvalidate', 'autocomplete'=>'off')) ?>
+            <?php print_r form_open_multipart('anggota/insert', array('class' => 'form-horizontal', 'id' => 'jvalidate', 'autocomplete'=>'off')) ?>
 
                 <div class="form-group">
                     <p class="col-sm-2 text-left">NIS </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="nis" class="form-control" placeholder="NIS" value="<?php echo set_value('nis'); ?>">
+                        <input type="text" name="nis" class="form-control" placeholder="NIS" value="<?php print_r set_value('nis'); ?>">
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                     <p class="col-sm-2 text-left">Nama </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="nama" class="form-control" placeholder="Nama" value="<?php echo set_value('nama'); ?>">
+                        <input type="text" name="nama" class="form-control" placeholder="Nama" value="<?php print_r set_value('nama'); ?>">
                     </div>
                 </div>
 
@@ -59,8 +59,8 @@
                     <div class="col-sm-10">
                     <select name="jenis" class="form-control" >
                         <option value="">- Pilih Jenis -</option>
-                        <option value="L" <?php echo set_select('jenis','L'); ?> >Laki Laki</option>
-                        <option value="P" <?php echo set_select('jenis','P'); ?>>Perempuan</option>
+                        <option value="L" <?php print_r set_select('jenis','L'); ?> >Laki Laki</option>
+                        <option value="P" <?php print_r set_select('jenis','P'); ?>>Perempuan</option>
                     </select>   
                     </div>
                 </div>
@@ -69,13 +69,13 @@
                     <p class="col-sm-2 text-left">Tanggal Lahir </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="tgl_lahir" class="form-control" placeholder="DD-MM-YYYY" id="tanggal"  value="<?php echo set_value('tgl_lahir'); ?>">
+                        <input type="text" name="tgl_lahir" class="form-control" placeholder="DD-MM-YYYY" id="tanggal"  value="<?php print_r set_value('tgl_lahir'); ?>">
                     </div>
                 </div>
                 <div class="form-group">
                 <p class="col-sm-2 text-left">Kelas </p>
                 <div class="col-sm-10">
-                     <input list="kelas" autocomplete="off" name="kelas" class="form-control" value="<?php echo set_value('kelas'); ?>">
+                     <input list="kelas" autocomplete="off" name="kelas" class="form-control" value="<?php print_r set_value('kelas'); ?>">
                                 <datalist id="kelas">
                                 <option value="VII A">
                                 <option value="VII B">
@@ -120,14 +120,14 @@
                     <p class="col-sm-2 text-left">Orang Tua </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="orangtua" class="form-control" placeholder="Nama Orangtua"  value="<?php echo set_value('orangtua'); ?>">
+                        <input type="text" name="orangtua" class="form-control" placeholder="Nama Orangtua"  value="<?php print_r set_value('orangtua'); ?>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-6">
                         <div class="btn-group pull-left">
-                            <?php echo anchor('anggota', 'Kembali', array('class' => 'btn btn-danger btn-sm')); ?>
+                            <?php print_r anchor('anggota', 'Kembali', array('class' => 'btn btn-danger btn-sm')); ?>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-            <?php echo form_close(); ?>
+            <?php print_r form_close(); ?>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -149,16 +149,16 @@
 
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Datepicker -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/js/bootstrap-datepicker.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/js/bootstrap-datepicker.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
@@ -174,4 +174,4 @@
         </script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>

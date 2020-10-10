@@ -66,7 +66,7 @@ class Buku extends CI_Controller {
 
             //apabila user mengkosongkan form input
             if($this->form_validation->run()==true){
-                // echo "masuk"; die();
+                // print_r "masuk"; die();
                 $bibid = $this->input->post('bibid');
                 $cek = $this->Mod_buku->cekBuku($bibid);
                 //cek idbuku yg sudah digunakan
@@ -95,7 +95,7 @@ class Buku extends CI_Controller {
 
                          );
                          $this->Mod_buku->insertBuku("buku", $save);
-                        // echo "berhasil"; die();
+                        // print_r "berhasil"; die();
                          redirect('buku/index/create-success');
                                  $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
@@ -131,7 +131,7 @@ class Buku extends CI_Controller {
     {
         if(isset($_POST['update'])) {
 
-            // echo "proses update"; die();
+            // print_r "proses update"; die();
 
             //jika tidak ada gambar yg diupload
 
@@ -139,7 +139,7 @@ class Buku extends CI_Controller {
                 
                 //apabila user mengkosongkan form input
                 if($this->form_validation->run()==true){
-                    // echo "masuk"; die();
+                    // print_r "masuk"; die();
                     
                     $bibid = $this->input->post('bibid');
                     $save  = array(
@@ -156,7 +156,7 @@ class Buku extends CI_Controller {
                         'tanggal_digunakan'    => $this->input->post('tanggal_digunakan'),
                     );
                     $this->Mod_buku->updateBuku($bibid, $save);
-                    // echo "berhasil"; die();
+                    // print_r "berhasil"; die();
                     redirect('buku/index/update-success');      
                 }
                 //jika tidak mengkosongkan
@@ -184,7 +184,7 @@ $this->load->view('buku/edit_buku', $data);
         unlink('assets/img/buku/'.$g['image']);
 
         $this->Mod_buku->deleteBuku($bibid, 'buku');
-        // echo "berhasil"; die();
+        // print_r "berhasil"; die();
         redirect('buku/index/delete-success');
     }
 
@@ -207,7 +207,7 @@ $this->load->view('buku/edit_buku', $data);
         //jika ada buku dalam database
         if($hasil->num_rows() > 0) {
             $dbuku = $hasil->row_array();
-            echo $dbuku['bibid'];
+            print_r $dbuku['bibid'];
         }
     }
    
@@ -220,7 +220,7 @@ $this->load->view('buku/edit_buku', $data);
         //jika ada buku dalam database
         if($hasil->num_rows() > 0) {
             $dbuku = $hasil->row_array();
-            echo $dbuku['judul'];
+            print_r $dbuku['judul'];
         }
     }
 

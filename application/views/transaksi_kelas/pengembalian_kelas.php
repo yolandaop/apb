@@ -3,14 +3,14 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('transaksi_kelas/laporan'); ?>">Laporan</a></li>
+            <li><a href="<?php print_r base_url('transaksi_kelas/laporan'); ?>">Laporan</a></li>
             <li class="active">Pengembalian Kelas</li>
         </ol>
 
         <?php
             
             if(!empty($message)) {
-                echo $message;
+                print_r $message;
             }
         ?>
 
@@ -48,16 +48,16 @@
                                 foreach($pengembalian_kelas->result() as $row) {
                                 ?>
                                     <tr>
-                                        <td><?php echo $no;?></td>
+                                        <td><?php print_r $no;?></td>
                                         <!-- jika ada buku di dalam database maka tampilkan -->
-                                        <td><?php echo $row->id_transaksi;?></td>
-                                        <td><?php echo $row->bibid;?></td>
-                                        <td><?php echo $row->judul;?></td>
-                                        <td><?php echo $row->kelas;?></td>
-                                        <td><?php echo $row->nama;?></td>
-                                        <td><?php echo $row->tanggal;?></td>
-                                        <td><?php echo $row->tanggal_kembali;?></td>
-                                        <td><?php echo $row->jumlah;?></td>
+                                        <td><?php print_r $row->id_transaksi;?></td>
+                                        <td><?php print_r $row->bibid;?></td>
+                                        <td><?php print_r $row->judul;?></td>
+                                        <td><?php print_r $row->kelas;?></td>
+                                        <td><?php print_r $row->nama;?></td>
+                                        <td><?php print_r $row->tanggal;?></td>
+                                        <td><?php print_r $row->tanggal_kembali;?></td>
+                                        <td><?php print_r $row->jumlah;?></td>
                                     </tr>
                                 <?php $no++; } ?>     
                                 </tbody>
@@ -94,21 +94,21 @@
 </div>
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
@@ -139,12 +139,12 @@ $(document).ready(function() {
             var bibid = $("#idhapus").val();
             
             $.ajax({
-                url:"<?php echo site_url('buku/delete');?>",
+                url:"<?php print_r site_url('buku/delete');?>",
                 type:"POST",
                 data:"bibid="+bibid,
                 cache:false,
                 success:function(html){
-                    location.href="<?php echo site_url('buku/index/delete-success');?>";
+                    location.href="<?php print_r site_url('buku/index/delete-success');?>";
                 }
             });
         });
@@ -157,13 +157,13 @@ $(document).ready(function() {
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a  href="<?php echo base_url('laporan/pengembalian'); ?>">Laporan</a></li>
+            <li><a  href="<?php print_r base_url('laporan/pengembalian'); ?>">Laporan</a></li>
             <li class="active">Pengembalian</li>
         </ol>
         <?php
             
             if(!empty($message)) {
-                echo $message;
+                print_r $message;
             }
         ?>
     </div>

@@ -3,15 +3,15 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('anggota/index'); ?>">Anggota</a></li>
+            <li><a href="<?php print_r base_url('anggota/index'); ?>">Anggota</a></li>
             <li class="active">Edit Anggota</li>
         </ol>
 
         <?php
-            echo validation_errors();
+            print_r validation_errors();
             //buat message nis
             if(!empty($message)) {
-            echo $message;
+            print_r $message;
             }
         ?>
 
@@ -32,16 +32,16 @@
             <?php
                 //validasi error upload
                 if(!empty($error)) {
-                    echo $error;
+                    print_r $error;
                 }
             ?>
-            <?php echo form_open_multipart('anggota/update', array('class' => 'form-horizontal', 'id' => 'jvalidate', 'autocomplete'=>'off')) ?>
+            <?php print_r form_open_multipart('anggota/update', array('class' => 'form-horizontal', 'id' => 'jvalidate', 'autocomplete'=>'off')) ?>
 
                 <div class="form-group">
                     <p class="col-sm-2 text-left">NIS </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="nis" class="form-control" placeholder="NIS" value="<?php echo $edit['nis']; 
+                        <input type="text" name="nis" class="form-control" placeholder="NIS" value="<?php print_r $edit['nis']; 
                         ?>" readonly="readonly">
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <p class="col-sm-2 text-left">Nama </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="nama" class="form-control" placeholder="Nama" value="<?php echo $edit['nama'] ?>">
+                        <input type="text" name="nama" class="form-control" placeholder="Nama" value="<?php print_r $edit['nama'] ?>">
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                     <div class="col-sm-10">
                     <?php 
                     $jenis_kelamin = array('L' => 'Laki-Laki', 'P' => 'Perempuan'); 
-                    echo form_dropdown('jenis',$jenis_kelamin,$edit['jk'],"class='form-control'");    
+                    print_r form_dropdown('jenis',$jenis_kelamin,$edit['jk'],"class='form-control'");    
                     ?>
                    
                     </div>
@@ -70,7 +70,7 @@
                     <p class="col-sm-2 text-left">Tanggal Lahir </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir" id="tanggal"  value="<?php echo $edit['ttl'] ?>">
+                        <input type="text" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir" id="tanggal"  value="<?php print_r $edit['ttl'] ?>">
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@
                     <p class="col-sm-2 text-left">Kelas </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="kelas" class="form-control" placeholder="Kelas"  value="<?php echo $edit['kelas']; ?>">
+                        <input type="text" name="kelas" class="form-control" placeholder="Kelas"  value="<?php print_r $edit['kelas']; ?>">
                     </div>
                 </div>
 
@@ -86,21 +86,21 @@
                     <p class="col-sm-2 text-left">Alamat </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="alamat" class="form-control" placeholder=""  value="<?php echo $edit['alamat']; ?>">
+                        <input type="text" name="alamat" class="form-control" placeholder=""  value="<?php print_r $edit['alamat']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <p class="col-sm-2 text-left">Orangtua </p>
 
                     <div class="col-sm-10">
-                        <input type="text" name="orangtua" class="form-control" placeholder=""  value="<?php echo $edit['orangtua']; ?>">
+                        <input type="text" name="orangtua" class="form-control" placeholder=""  value="<?php print_r $edit['orangtua']; ?>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-6">
                         <div class="btn-group pull-left">
-                            <?php echo anchor('anggota', 'Kembali', array('class' => 'btn btn-danger btn-sm')); ?>
+                            <?php print_r anchor('anggota', 'Kembali', array('class' => 'btn btn-danger btn-sm')); ?>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-            <?php echo form_close(); ?>
+            <?php print_r form_close(); ?>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -120,18 +120,18 @@
 </div>
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Datepicker -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/js/bootstrap-datepicker.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/js/bootstrap-datepicker.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>

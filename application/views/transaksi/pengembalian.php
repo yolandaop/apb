@@ -3,14 +3,14 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('transaksi/laporan'); ?>">Laporan</a></li>
+            <li><a href="<?php print_r base_url('transaksi/laporan'); ?>">Laporan</a></li>
             <li class="active">Pengembalian Individu</li>
         </ol>
 
         <?php
             
             if(!empty($message)) {
-                echo $message;
+                print_r $message;
             }
         ?>
 
@@ -41,13 +41,13 @@
                             </thead>
                             <?php $no=0; foreach($pengembalian->result() as $data): $no++;?>
                             <tr>
-                                <td><?php echo $no;?></td>
-                                <td><?php echo $data->id_transaksi;?></td>
-                                <td><?php echo $data->nama;?></td>
-                                <td><?php echo $data->bibid;?></td>
-                                <td><?php echo $data->judul;?></td>
-                                <td><?php echo $data->tanggal_pinjam; ?></td>
-                                <td><?php echo $data->tanggal_kembali; ?></td>
+                                <td><?php print_r $no;?></td>
+                                <td><?php print_r $data->id_transaksi;?></td>
+                                <td><?php print_r $data->nama;?></td>
+                                <td><?php print_r $data->bibid;?></td>
+                                <td><?php print_r $data->judul;?></td>
+                                <td><?php print_r $data->tanggal_pinjam; ?></td>
+                                <td><?php print_r $data->tanggal_kembali; ?></td>
                             </tr>
                             <?php endforeach;?>
                         </table>
@@ -64,21 +64,21 @@
 
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
@@ -90,7 +90,7 @@ $(document).ready(function() {
 </script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
@@ -119,10 +119,10 @@ $(document).ready(function() {
         }
         else{
 
-            $('#loader').html('<img src="<?php echo base_url('assets/img/loader/loader1.gif') ?>"> ');
+            $('#loader').html('<img src="<?php print_r base_url('assets/img/loader/loader1.gif') ?>"> ');
 
             $.ajax({
-                url:"<?php echo site_url('laporan/cari_pengembalian');?>",
+                url:"<?php print_r site_url('laporan/cari_pengembalian');?>",
                 type:"POST",
                 data:"tanggal1="+tanggal1+"&tanggal2="+tanggal2,
                 cache:false,
@@ -146,7 +146,7 @@ $(document).ready(function() {
         //alert(id_transaksi);        
         // $("#myModal3").modal("show");
         $.ajax({
-                url:"<?php echo site_url('laporan/detail_pengembalian');?>",
+                url:"<?php print_r site_url('laporan/detail_pengembalian');?>",
                 type:"POST",
                 data:"id_transaksi="+id_transaksi,
                 cache:false,

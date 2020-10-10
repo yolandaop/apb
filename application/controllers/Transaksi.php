@@ -87,7 +87,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
             $this->_set_rules();
             //apabila user mengkosongkan form input
             if($this->form_validation->run()==true){
-                // echo "masuk"; die();
+                // print_r "masuk"; die();
                 $data['tglpinjam']  = date('Y-m-d');
                 $data['autonumber'] = $this->Mod_transaksi->AutoNumbering();
                 //cek idbuku yg sudah digunakan
@@ -117,7 +117,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
                             'tanggal_pinjam' => $this->input->post('tanggal'),
                          );
                         $this->Mod_transaksi->insertTransaksi('transaksi', $save);
-                        // echo "berhasil"; die();
+                        // print_r "berhasil"; die();
                         $bibid = $this->input->post('bibid');
                         $jumlah = $this->Mod_buku->getEksemplar($bibid) - 1;
 

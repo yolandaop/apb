@@ -4,7 +4,7 @@
 </head>
 <body>
 	<h1>Data Siswa</h1><hr>
-	<a href="<?php echo base_url("Siswa/form"); ?>">Import Data</a><br><br>
+	<a href="<?php print_r base_url("Siswa/form"); ?>">Import Data</a><br><br>
 
 	<table border="1" cellpadding="8">
 	<tr>
@@ -17,15 +17,15 @@
 	<?php
 	if( ! empty($siswa)){ // Jika data pada database tidak sama dengan empty (alias ada datanya)
 		foreach($siswa as $data){ // Lakukan looping pada variabel siswa dari controller
-			echo "<tr>";
-			echo "<td>".$data->nis."</td>";
-			echo "<td>".$data->nama."</td>";
-			echo "<td>".$data->jenis_kelamin."</td>";
-			echo "<td>".$data->alamat."</td>";
-			echo "</tr>";
+			print_r "<tr>";
+			print_r "<td>".$data->nis."</td>";
+			print_r "<td>".$data->nama."</td>";
+			print_r "<td>".$data->jenis_kelamin."</td>";
+			print_r "<td>".$data->alamat."</td>";
+			print_r "</tr>";
 		}
 	}else{ // Jika data tidak ada
-		echo "<tr><td colspan='4'>Data tidak ada</td></tr>";
+		print_r "<tr><td colspan='4'>Data tidak ada</td></tr>";
 	}
 	?>
 	</table>

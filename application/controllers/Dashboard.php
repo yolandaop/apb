@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller {
                 'jumlah'  => floatval($row["jumlah"])
                 );
                 }
-                echo json_encode($output);
+                print_r json_encode($output);
         }
 
     }
@@ -41,7 +41,7 @@ class Dashboard extends CI_Controller {
                 'jumlah'  => floatval($row["jumlah"])
                 );
                 }
-                echo json_encode($output);
+                print_r json_encode($output);
         }
 
     }

@@ -12,22 +12,22 @@
     <title>Login | CI-Perpustakaan</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Isi CSS -->
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/custom.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/custom.css" rel="stylesheet">
 
     <!-- Custom Login CSS -->
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/customlogin.css" rel="stylesheet"> 
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/customlogin.css" rel="stylesheet"> 
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +48,7 @@
     <div class="col-md-12">      
     <?php
     if(!empty($pesan)) {
-        echo $pesan;
+        print_r $pesan;
     }
     ?>
     </div>
@@ -68,24 +68,24 @@
 <div class="col-md-3"></div>
     <div class="col-md-6">
         <div class="panel panel-default">
-            <div class="panel-heading" style="background-image: url(<?php echo base_url(); ?>/assets/img/loginheader.png); height: 200px;">
+            <div class="panel-heading" style="background-image: url(<?php print_r base_url(); ?>/assets/img/loginheader.png); height: 200px;">
             </div>
             <div class="panel-body">
-                <form class="form-horizontal" role="form" action="<?php echo site_url('login');?>" method="post">
-                    <?php echo $this->session->flashdata('message');?>
+                <form class="form-horizontal" role="form" action="<?php print_r site_url('login');?>" method="post">
+                    <?php print_r $this->session->flashdata('message');?>
                     <div class="form-group">
                         <p class="col-sm-3">Username </p>
                         
                         <div class="col-sm-9">
-                           <?php echo form_error('username'); ?>
-                            <input type="text" name="username" class="form-control" id="inputEmail3" placeholder="Username" value="<?php echo set_value('username'); ?>">
+                           <?php print_r form_error('username'); ?>
+                            <input type="text" name="username" class="form-control" id="inputEmail3" placeholder="Username" value="<?php print_r set_value('username'); ?>">
                         </div>
                     </div>
                     <div class="form-group">
                     <p class="col-sm-3">Password </p>
                         <div class="col-sm-9">
-                            <?php echo form_error('password'); ?>
-                            <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" value="<?php echo set_value('password'); ?>">
+                            <?php print_r form_error('password'); ?>
+                            <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" value="<?php print_r set_value('password'); ?>">
                         </div>
                     </div>
                     <!-- <div class="form-group">
@@ -115,16 +115,16 @@
 </div>
 
     <!-- jQuery -->
-    <script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+    <script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 </body>
 

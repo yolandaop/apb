@@ -62,7 +62,7 @@ class transaksi_kelas extends CI_Controller {
             $this->_set_rules();
             //apabila user mengkosongkan form input
             if($this->form_validation->run()==true){
-                // echo "masuk"; die();
+                // print_r "masuk"; die();
                 $nis = $this->input->post('nis');
                 $data['tglpinjam']  = date('Y-m-d');
                 $data['autonumber'] = $this->Mod_transaksi_kelas->AutoNumbering();
@@ -93,7 +93,7 @@ class transaksi_kelas extends CI_Controller {
                             'jumlah' => $this->input->post('jumlah'),
                          );
                         $this->Mod_transaksi_kelas->insertTransaksi('transaksi_kelas', $save);
-                        // echo "berhasil"; die();
+                        // print_r "berhasil"; die();
                         $bibid = $this->input->post('bibid');
                         $jumlah = $this->Mod_buku->getEksemplar($bibid) - $this->input->post('jumlah');
 
@@ -130,7 +130,7 @@ class transaksi_kelas extends CI_Controller {
         //jika ada buku dalam database
         if($hasil->num_rows() > 0) {
             $danggota = $hasil->row_array();
-            echo $danggota['nis'];
+            print_r $danggota['nis'];
         }
     }
 

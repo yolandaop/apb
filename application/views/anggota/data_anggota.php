@@ -3,14 +3,14 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('anggota'); ?>">Anggota</a></li>
+            <li><a href="<?php print_r base_url('anggota'); ?>">Anggota</a></li>
             <li class="active">Data anggota</li>
         </ol>
 
         <?php
             
             if(!empty($message)) {
-                echo $message;
+                print_r $message;
             }
         ?>
 
@@ -20,8 +20,8 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <?php echo anchor('anggota/create', 'Tambah Anggota', array('class' => 'btn btn-primary btn-sm')); ?>
-        <?php echo anchor('import/anggota', 'Import Anggota', array('class' => 'btn btn-success btn-sm')); ?>
+        <?php print_r anchor('anggota/create', 'Tambah Anggota', array('class' => 'btn btn-primary btn-sm')); ?>
+        <?php print_r anchor('import/anggota', 'Import Anggota', array('class' => 'btn btn-success btn-sm')); ?>
        
         <br /><br />
         <div class="panel panel-default">
@@ -50,16 +50,16 @@
                                 foreach($anggota->result() as $row) {
                                 ?>
                                     <tr>
-                                        <td><?php echo $no;?></td>
-                                        <td><?php echo $row->nis;?></td>
-                                        <td><?php echo $row->nama;?></td>
-                                        <td><?php echo $row->ttl;?></td>
-                                        <td><?php echo $row->kelas;?></td>
-                                        <td><?php echo $row->alamat;?></td>
-                                        <td><?php echo $row->orangtua;?></td>
+                                        <td><?php print_r $no;?></td>
+                                        <td><?php print_r $row->nis;?></td>
+                                        <td><?php print_r $row->nama;?></td>
+                                        <td><?php print_r $row->ttl;?></td>
+                                        <td><?php print_r $row->kelas;?></td>
+                                        <td><?php print_r $row->alamat;?></td>
+                                        <td><?php print_r $row->orangtua;?></td>
                                         <td class="text-center">
-                                <a href="<?php echo base_url('anggota/edit/'.$row->nis) ?>"><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                                <a href="#" name="<?php echo $row->nama;?>" class="hapus btn btn-danger btn-xs" kode="<?php echo $row->nis;?>">Hapus</a>
+                                <a href="<?php print_r base_url('anggota/edit/'.$row->nis) ?>"><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
+                                <a href="#" name="<?php print_r $row->nama;?>" class="hapus btn btn-danger btn-xs" kode="<?php print_r $row->nis;?>">Hapus</a>
                             </td>
                                     </tr>
                                 <?php $no++; } ?>    
@@ -97,21 +97,21 @@
 </div>
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
@@ -138,12 +138,12 @@ $(document).ready(function() {
             var kode=$("#idhapus").val();
             
             $.ajax({
-                url:"<?php echo site_url('anggota/delete');?>",
+                url:"<?php print_r site_url('anggota/delete');?>",
                 type:"POST",
                 data:"kode="+kode,
                 cache:false,
                 success:function(html){
-                    location.href="<?php echo site_url('anggota/index/delete-success');?>";
+                    location.href="<?php print_r site_url('anggota/index/delete-success');?>";
                 }
             });
         });

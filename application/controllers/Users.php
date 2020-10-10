@@ -86,7 +86,7 @@ class Users extends CI_Controller {
                         'password'   => get_hash($this->input->post('password'))
                     );
                     $this->Mod_users->insertUsers("petugas", $save);
-                    // echo "berhasil"; die();
+                    // print_r "berhasil"; die();
                     redirect('users/index/create-success');
                 }
             }
@@ -132,7 +132,7 @@ class Users extends CI_Controller {
                         'password'   => get_hash($this->input->post('password'))
                     );
                     $this->Mod_users->updateUsers($id_petugas, $save);
-                    // echo "berhasil"; die();
+                    // print_r "berhasil"; die();
                     redirect('users/index/update-success'); 
 
                 //jika password tidak diganit    
@@ -147,7 +147,7 @@ class Users extends CI_Controller {
                         'full_name'  => $this->input->post('full_name')
                     );
                     $this->Mod_users->updateUsers($id_petugas, $save);
-                    // echo "berhasil"; die();
+                    // print_r "berhasil"; die();
                     redirect('users/index/update-success'); 
                 }
                 
@@ -172,7 +172,7 @@ class Users extends CI_Controller {
         $id_petugas = $this->input->post('id_petugas');
 
         $this->Mod_users->deleteUsers($id_petugas, 'petugas');
-        // echo "berhasil"; die();
+        // print_r "berhasil"; die();
         redirect('users/index/delete-success');
     }
 

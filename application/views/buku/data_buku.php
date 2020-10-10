@@ -3,14 +3,14 @@
     <div class="col-lg-12"><br />
        
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('buku'); ?>">Buku</a></li>
+            <li><a href="<?php print_r base_url('buku'); ?>">Buku</a></li>
             <li class="active">Data Buku</li>
         </ol>
 
         <?php
             
             if(!empty($message)) {
-                echo $message;
+                print_r $message;
             }
         ?>
 
@@ -20,8 +20,8 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <?php echo anchor('buku/create', 'Tambah Buku', array('class' => 'btn btn-primary btn-sm')); ?>
-        <?php echo anchor('import/buku', 'Import Buku', array('class' => 'btn btn-success btn-sm')); ?>
+        <?php print_r anchor('buku/create', 'Tambah Buku', array('class' => 'btn btn-primary btn-sm')); ?>
+        <?php print_r anchor('import/buku', 'Import Buku', array('class' => 'btn btn-success btn-sm')); ?>
         <br /><br />
         <div class="panel panel-default">
 
@@ -54,22 +54,22 @@
                                 foreach($buku->result() as $row) {
                                 ?>
                                     <tr>
-                                        <td><?php echo $no;?></td>
+                                        <td><?php print_r $no;?></td>
                                         <!-- jika ada buku di dalam database maka tampilkan -->
-                                        <td><?php echo $row->bibid;?></td>
-                                        <td><?php echo $row->judul;?></td>
-                                        <td><?php echo $row->kategori;?></td>
-                                        <td><?php echo $row->penerbit;?></td>
-                                        <td><?php echo $row->deskripsi;?></td>
-                                        <td><?php echo $row->nomor;?></td>
-                                        <td><?php echo $row->eksemplar;?></td>
-                                        <td><?php echo $row->kepemilikan;?></td>
-                                        <td><?php echo $row->sumber;?></td>
-                                        <td><?php echo $row->tanggal_diterima;?></td>
-                                        <td><?php echo $row->tanggal_digunakan;?></td>
+                                        <td><?php print_r $row->bibid;?></td>
+                                        <td><?php print_r $row->judul;?></td>
+                                        <td><?php print_r $row->kategori;?></td>
+                                        <td><?php print_r $row->penerbit;?></td>
+                                        <td><?php print_r $row->deskripsi;?></td>
+                                        <td><?php print_r $row->nomor;?></td>
+                                        <td><?php print_r $row->eksemplar;?></td>
+                                        <td><?php print_r $row->kepemilikan;?></td>
+                                        <td><?php print_r $row->sumber;?></td>
+                                        <td><?php print_r $row->tanggal_diterima;?></td>
+                                        <td><?php print_r $row->tanggal_digunakan;?></td>
                                         <td class="text-center">
-                                <a href="<?php echo base_url('buku/edit/'.$row->bibid) ?>"><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                                <a href="#" name="<?php echo $row->judul;?>" class="hapus btn btn-danger btn-xs" kode="<?php echo $row->bibid;?>">Hapus</a>
+                                <a href="<?php print_r base_url('buku/edit/'.$row->bibid) ?>"><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
+                                <a href="#" name="<?php print_r $row->judul;?>" class="hapus btn btn-danger btn-xs" kode="<?php print_r $row->bibid;?>">Hapus</a>
                             </td>
                                     </tr>
                                 <?php $no++; } ?>    
@@ -107,21 +107,21 @@
 </div>
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
@@ -152,12 +152,12 @@ $(document).ready(function() {
             var bibid = $("#idhapus").val();
             
             $.ajax({
-                url:"<?php echo site_url('buku/delete');?>",
+                url:"<?php print_r site_url('buku/delete');?>",
                 type:"POST",
                 data:"bibid="+bibid,
                 cache:false,
                 success:function(html){
-                    location.href="<?php echo site_url('buku/index/delete-success');?>";
+                    location.href="<?php print_r site_url('buku/index/delete-success');?>";
                 }
             });
         });

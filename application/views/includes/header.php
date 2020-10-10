@@ -9,17 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/icon.png">
+    <link rel="icon" type="image/png" href="<?php print_r base_url(); ?>assets/img/icon.png">
     <title>APB-MADRASAHKU</title>
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/css/datepicker.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/morrisjs/morris.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/css/datepicker.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php print_r base_url(); ?>assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                 $array_bln = array(1=>"Januari","Februari","Maret", "April", "Mei","Juni","Juli","Agustus","September","Oktober", "November","Desember");
                 $bln = $array_bln[date('n')];
                 $thn = date('Y');
-                echo $hr . ", " . $tgl . " " . $bln . " " . $thn . " ";
+                print_r $hr . ", " . $tgl . " " . $bln . " " . $thn . " ";
                 ?>
             </span>
         </div>
@@ -45,84 +45,84 @@
     
                 <?php if ($id_petugas=='Admin'){?>
                     <li>
-                <a href="<?php echo base_url('dashboard'); ?>">
+                <a href="<?php print_r base_url('dashboard'); ?>">
                     <i class="fa fa-home" aria-hidden="true"></i> Dashboard
                 </a>
                 </li>
                 <li class="header">Laporan</li>
                 <li>
-                <a href="<?php echo base_url('transaksi/laporan'); ?>">
+                <a href="<?php print_r base_url('transaksi/laporan'); ?>">
                     <i class="fa fa-folder-open" aria-hidden="true"></i> Pengembalian Individu
                 </a>
                 </li>
                 <li>
-                <a href="<?php echo base_url('transaksi_kelas/laporan'); ?>">
+                <a href="<?php print_r base_url('transaksi_kelas/laporan'); ?>">
                     <i class="fa fa-folder-open" aria-hidden="true"></i> Pengembalian Kelas
                 </a>
                 </li>
                 <li>
-                <a href="<?php echo base_url('buku'); ?>">
+                <a href="<?php print_r base_url('buku'); ?>">
                     <i class="fa fa-book" aria-hidden="true"></i> Data Buku
                 </a>
                 </li>
                     <li>
-                <a href="<?php echo base_url('anggota'); ?>">
+                <a href="<?php print_r base_url('anggota'); ?>">
                     <i class="fa fa-male" aria-hidden="true"></i> Data Anggota
                 </a>
                 </li>
                 <li class="header">Kelola Petugas</li>
                 <li>
-                <a href="<?php echo base_url('users');?>">
+                <a href="<?php print_r base_url('users');?>">
                     <i class="fa fa-user" aria-hidden="true"></i> Data Petugas
                 </a>
                 </li>
                 <li>
-                <a href="<?php echo base_url('login/logout'); ?>">
+                <a href="<?php print_r base_url('login/logout'); ?>">
                     <i class="fa fa-users" aria-hidden="true"></i> Logout
                 </a>
                 </li>
                 <?php ; ?>
                 <?php } else { ?>
                     <li>
-                <a href="<?php echo base_url('dashboard'); ?>">
+                <a href="<?php print_r base_url('dashboard'); ?>">
                     <i class="fa fa-home" aria-hidden="true"></i> Dashboard
                 </a>
                 </li>
 
                 <li class="header">Transaksi</li>
                 <li>
-                <a href="<?php echo base_url('transaksi'); ?>">
+                <a href="<?php print_r base_url('transaksi'); ?>">
                     <i class="fa fa-user" aria-hidden="true"></i> Peminjaman Individu
                 </a>
                 </li>
                 <li>
-                <a href="<?php echo base_url('transaksi_kelas'); ?>">
+                <a href="<?php print_r base_url('transaksi_kelas'); ?>">
                     <i class="fa fa-users" aria-hidden="true"></i> Peminjaman Kelas
                 </a>
                 </li>
                 <li class="header">Laporan</li>
                 <li>
-                <a href="<?php echo base_url('transaksi/laporan'); ?>">
+                <a href="<?php print_r base_url('transaksi/laporan'); ?>">
                     <i class="fa fa-folder-open" aria-hidden="true"></i> Pengembalian Individu
                 </a>
                 </li>
                 <li>
-                <a href="<?php echo base_url('transaksi_kelas/laporan'); ?>">
+                <a href="<?php print_r base_url('transaksi_kelas/laporan'); ?>">
                     <i class="fa fa-folder-open" aria-hidden="true"></i> Pengembalian Kelas
                 </a>
                 </li>
                 <li>
-                <a href="<?php echo base_url('buku'); ?>">
+                <a href="<?php print_r base_url('buku'); ?>">
                     <i class="fa fa-book" aria-hidden="true"></i> Data Buku
                 </a>
                 </li>
                     <li>
-                <a href="<?php echo base_url('anggota'); ?>">
+                <a href="<?php print_r base_url('anggota'); ?>">
                     <i class="fa fa-male" aria-hidden="true"></i> Data Anggota
                 </a>
                 </li>
                 <li class="header">
-                    <a href="<?php echo base_url('login/logout'); ?>">
+                    <a href="<?php print_r base_url('login/logout'); ?>">
                     <i class="fa fa-power-off fa-fw" aria-hidden="true"></i> Logout</a>
                 </li>
                 <?php } ?>

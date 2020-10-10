@@ -33,15 +33,15 @@ $tabel = $this->db->query("Select month(tanggal_pinjam) as status, count(*) as n
                                 <i class="fa fa-folder-open fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge"><?php echo $countpeminjaman; $tahun='2019'; ?></div>
+                                <div class="huge"><?php print_r $countpeminjaman; $tahun='2019'; ?></div>
                                 <div>Peminjaman Individu</div>
                                 
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo base_url('transaksi'); ?>" <?php 
+                    <a href="<?php print_r base_url('transaksi'); ?>" <?php 
             if ($id_petugas=='Admin'){
-                echo " hidden";
+                print_r " hidden";
             }
             ?>>
                         <div class="panel-footer">
@@ -60,14 +60,14 @@ $tabel = $this->db->query("Select month(tanggal_pinjam) as status, count(*) as n
                                 <i class="fa fa-folder-open fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge"><?php echo $countpeminjamankelas; ?></div>
+                                <div class="huge"><?php print_r $countpeminjamankelas; ?></div>
                                 <div>Peminjaman Kelas</div>
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo base_url('transaksi_kelas'); ?>" <?php 
+                    <a href="<?php print_r base_url('transaksi_kelas'); ?>" <?php 
             if ($id_petugas=='Admin'){
-                echo " hidden";
+                print_r " hidden";
             }
             ?>>
                         <div class="panel-footer">
@@ -93,12 +93,12 @@ $tabel = $this->db->query("Select month(tanggal_pinjam) as status, count(*) as n
                                 <i class="fa fa-users fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge"><?php echo $countanggota; ?></div>
+                                <div class="huge"><?php print_r $countanggota; ?></div>
                                 <div>Anggota</div>
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo base_url('anggota'); ?>">
+                    <a href="<?php print_r base_url('anggota'); ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Lihat Semua</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -115,16 +115,16 @@ $tabel = $this->db->query("Select month(tanggal_pinjam) as status, count(*) as n
                                 <i class="fa fa-book fa-5x"></i>
                             </div>
                             <div class="col-xs-5 text-right">
-                                <div class="huge"><?php echo $countbuku; ?></div>
+                                <div class="huge"><?php print_r $countbuku; ?></div>
                                 <div>Judul Buku</div>
                             </div>
                             <div class="col-xs-4 text-right">
-                                <div class="huge"><?php echo $counteksemplar; ?></div>
+                                <div class="huge"><?php print_r $counteksemplar; ?></div>
                                 <div>Eksemplar</div>
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo base_url('buku'); ?>">
+                    <a href="<?php print_r base_url('buku'); ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Lihat Semua</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -146,7 +146,7 @@ $tabel = $this->db->query("Select month(tanggal_pinjam) as status, count(*) as n
                                     <?php
                                     foreach($result as $row)
                                     {
-                                        echo '<option value="'.$row["year"].'">'.$row["year"].'</option>';
+                                        print_r '<option value="'.$row["year"].'">'.$row["year"].'</option>';
                                     }
                                     ?>
                                     </select>
@@ -172,7 +172,7 @@ $tabel = $this->db->query("Select month(tanggal_pinjam) as status, count(*) as n
                                     <?php
                                     foreach($result as $row)
                                     {
-                                        echo '<option value="'.$row["year"].'">'.$row["year"].'</option>';
+                                        print_r '<option value="'.$row["year"].'">'.$row["year"].'</option>';
                                     }
                                     ?>
                                     </select>
@@ -193,25 +193,25 @@ $tabel = $this->db->query("Select month(tanggal_pinjam) as status, count(*) as n
 
 <!-- jQuery -->
 
-<script src="<?php echo base_url();?>asset/highcharts/jquery.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/highcharts/highcharts.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/highcharts/modules/exporting.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/highcharts/modules/offline-exporting.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php print_r base_url();?>asset/highcharts/jquery.min.js" type="text/javascript"></script>
+<script src="<?php print_r base_url(); ?>assets/highcharts/highcharts.js" type="text/javascript"></script>
+<script src="<?php print_r base_url(); ?>assets/highcharts/modules/exporting.js" type="text/javascript"></script>
+<script src="<?php print_r base_url(); ?>assets/highcharts/modules/offline-exporting.js" type="text/javascript"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- Morris Charts JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/raphael/raphael.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/vendor/morrisjs/morris.min.js"></script>
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/data/morris-data.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/raphael/raphael.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/vendor/morrisjs/morris.min.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/data/morris-data.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
+<script src="<?php print_r base_url(); ?>template/backend/sbadmin/dist/js/sb-admin-2.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 google.charts.load('current', {packages: ['corechart', 'bar']});
@@ -221,7 +221,7 @@ function loaddata2(year2, title)
 {  
     var temp_title = title + ' '+year2+'';
     $.ajax({
-        url:"<?php echo site_url('dashboard/chart2');?>",
+        url:"<?php print_r site_url('dashboard/chart2');?>",
         method:"POST",
         data:{year2:year2},
         dataType:"JSON",
@@ -261,7 +261,7 @@ function loaddata(year, title)
 {
     var temp_title = title + ' '+year+'';
     $.ajax({
-        url:"<?php echo site_url('dashboard/chart');?>",
+        url:"<?php print_r site_url('dashboard/chart');?>",
         method:"POST",
         data:{year:year},
         dataType:"JSON",
