@@ -155,7 +155,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
         //jika ada buku dalam database
         if($hasil->num_rows() > 0) {
             $danggota = $hasil->row_array();
-            echo $danggota['nis'];
+            print_r $danggota['nis'];
         }
     }
 
