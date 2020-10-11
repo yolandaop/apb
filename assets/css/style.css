@@ -3,6 +3,7 @@ body {
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: auto;
 }
+
 .main {
 	background-color: #ffffff;
 	width: 100%;
@@ -12,15 +13,18 @@ body {
 	-webkit-box-shadow: -5px -5px 5px #888;
 	box-shadow: -5px -5px 5px #888;
 }
+
 header {
 	background-image: url(../img/header.png);
 	width: 100%;
 	height: 23em;
 }
+
 .isi {
 	width: 83%;
 	margin-left: 17em;
 }
+
 #tanggal {
 	/* background-image:url(../images/menu-atas.gif); */
 	background-color: #ebce39;
@@ -29,6 +33,7 @@ header {
 	padding: 0.5em;
 	padding-bottom: 0.5em;
 }
+
 #footer {
 	background-color: #333;
 	font-size: 12px;
@@ -37,10 +42,12 @@ header {
 	border: 1px solid #fff;
 	padding: 20px;
 }
+
 .clear {
 	clear: both;
 	float: none;
 }
+
 .sidebar-container {
 	position: absolute;
 	width: 15%;
