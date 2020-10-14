@@ -41,12 +41,12 @@ class Buku extends CI_Controller {
         $this->load->view('includes/header', $data );
             $this->load->view('buku/data_buku', $data); 
         }
-        else{
+        
             $data['message'] = "";
                     $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
             $this->load->view('buku/data_buku', $data); 
-        }
+        
         
     }
 

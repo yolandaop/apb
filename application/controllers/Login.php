@@ -23,7 +23,7 @@ class Login extends CI_Controller {
             {
                 $this->load->view('formlogin/login_data');
             }
-            else{
+            
                 $username = $this->input->post('username');
 
                 if($this->Mod_login->check_db($username)->num_rows()==1) {
@@ -59,7 +59,7 @@ class Login extends CI_Controller {
                         $this->load->view('formlogin/login_data', $data); 
                 }    
 
-            }
+            
         }
         else{
             $this->load->view('formlogin/login_data');

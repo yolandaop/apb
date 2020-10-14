@@ -40,11 +40,11 @@ class Users extends CI_Controller {
         $this->load->view('includes/header', $data );
             $this->load->view('users/users_data', $data); 
         }
-        else{
+        
                     $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
             $this->load->view('users/users_data', $data); 
-        }
+        
 
        
     }

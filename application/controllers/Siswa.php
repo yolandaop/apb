@@ -32,9 +32,9 @@ class Siswa extends CI_Controller {
 				// Masukan variabel $sheet ke dalam array data yang nantinya akan di kirim ke file form.php
 				// Variabel $sheet tersebut berisi data-data yang sudah diinput di dalam excel yang sudha di upload sebelumnya
 				$data['sheet'] = $sheet; 
-			}else{ // Jika proses upload gagal
+			} // Jika proses upload gagal
 				$data['upload_error'] = $upload['error']; // Ambil pesan error uploadnya untuk dikirim ke file form dan ditampilkan
-			}
+			
 		}
 		
 		$this->load->view('form', $data);

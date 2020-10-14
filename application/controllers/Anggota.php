@@ -85,7 +85,7 @@ class Anggota extends CI_Controller {
                     $this->load->view('includes/header', $data );
                     $this->load->view('anggota/tambah_anggota', $data);  
                 }
-                else{
+                
                    
 
                         $save  = array(
@@ -104,7 +104,7 @@ class Anggota extends CI_Controller {
                                 $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
                         $this->load->view('anggota/tambah_anggota', $data); 
-                    } 
+                     
                 }
             //jika tidak mengkosongkan
             
