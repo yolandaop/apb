@@ -43,7 +43,7 @@ class Anggota extends CI_Controller {
                     $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
             $this->load->view('anggota/data_anggota', $data); 
-        
+    
         
     }
 
@@ -107,12 +107,12 @@ class Anggota extends CI_Controller {
                     } 
                 }
             //jika tidak mengkosongkan
-            else{
+            
                 $data['message'] = "";
                         $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
                 $this->load->view('anggota/tambah_anggota', $data); 
-            }
+            
     }
     }
     public function edit()
