@@ -79,8 +79,7 @@ class Buku extends CI_Controller {
                     $this->load->view('buku/tambah_buku', $data); 
                 }
                  else{
-                     $judul = slug($this->input->post('judul'));
-                        $save  = array(
+                           $save  = array(
                              'bibid'   => $this->input->post('bibid'),
                              'judul'       => $this->input->post('judul'),
                              'kategori'   => $this->input->post('kategori'),

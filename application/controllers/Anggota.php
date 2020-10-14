@@ -86,7 +86,7 @@ class Anggota extends CI_Controller {
                     $this->load->view('anggota/tambah_anggota', $data);  
                 }
                 else{
-                    $nama = slug($this->input->post('nama'));
+                   
 
                         $save  = array(
                             'nis'   => $this->input->post('nis'),
