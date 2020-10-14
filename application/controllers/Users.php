@@ -100,10 +100,10 @@ class Users extends CI_Controller {
         } //end $_POST['save']
     }
 
-    public function edit($id)
+    public function edit($id_user)
     {
          
-        $data['edit']    = $this->Mod_users->getUsers($id)->row_array();
+        $data['edit']    = $this->Mod_users->getUsers($id_user)->row_array();
         // $data['anggota'] =  $this->Mod_anggota->getAll()->result_array();
         // print_r($data['edit']); die();
          $data['id_petugas'] = $this->session->userdata['level'];

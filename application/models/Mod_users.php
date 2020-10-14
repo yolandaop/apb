@@ -36,7 +36,7 @@ class Mod_users extends CI_Model {
     }
     
 
-    function deleteUsers($id, $table)
+    function deleteUsers($id_siswa, $table)
     {
         $this->db->where('id_petugas', $id);
         $this->db->delete($table);

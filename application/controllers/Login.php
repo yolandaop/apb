@@ -28,15 +28,15 @@ class Login extends CI_Controller {
 
                 if($this->Mod_login->check_db($username)->num_rows()==1) {
 
-                    $db = $this->Mod_login->check_db($username)->row();
+                    $database = $this->Mod_login->check_db($username)->row();
         
-                     if(hash_verified($this->input->post('password'), $db->password)) {
+                     if(hash_verified($this->input->post('password'), $database->password)) {
                         $userdata = array(
-                            'id_petugas'  => $db->id_petugas,
-                            'username'    => $db->username,
-                            'full_name'   => ucfirst($db->full_name),
-                            'level'        => $db->level,
-                            'password'    => $db->password,
+                            'id_petugas'  => $database->id_petugas,
+                            'username'    => $database->username,
+                            'full_name'   => ucfirst($database->full_name),
+                            'level'        => $database->level,
+                            'password'    => $database->password,
                         );
 
                     $this->session->set_userdata($userdata);

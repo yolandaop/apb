@@ -180,7 +180,7 @@ $this->load->view('buku/edit_buku', $data);
 
         $bibid = $this->input->post('bibid');
         //hapus gambar yg ada diserver
-        unlink('assets/img/buku/'.$g['image']);
+        unlink('assets/img/buku/'.$gambar['image']);
 
         $this->Mod_buku->deleteBuku($bibid, 'buku');
         // print_r "berhasil"; die();
