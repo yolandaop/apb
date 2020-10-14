@@ -1,7 +1,7 @@
 <?php 
 
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+   defined('BASEPATH');
 
 class Mod_transaksi_kelas extends CI_Model 
 {

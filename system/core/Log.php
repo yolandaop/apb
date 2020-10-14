@@ -35,7 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+   defined('BASEPATH');
 
 /**
  * Logging Class
@@ -191,7 +191,7 @@ class CI_Log {
 			// Only add protection to php files
 			if ($this->_file_ext === 'php')
 			{
-				$message .= "<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>\n\n";
+				$message .= "<?php    defined('BASEPATH'); ?>\n\n";
 			}
 		}
 

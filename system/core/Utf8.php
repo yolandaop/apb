@@ -35,7 +35,7 @@
  * @since	Version 2.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+   defined('BASEPATH');
 
 /**
  * Utf8 Class

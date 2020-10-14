@@ -1,6 +1,6 @@
 
 <?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+   defined('BASEPATH');
 
 class Dashboard extends CI_Controller {
     

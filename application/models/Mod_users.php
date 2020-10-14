@@ -1,7 +1,7 @@
 <?php 
 
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+   defined('BASEPATH');
 
 class Mod_users extends CI_Model {
 
@@ -22,6 +22,7 @@ class Mod_users extends CI_Model {
         $insert = $this->db->insert($tabel, $data);
         return $insert;
     }
+ 
 
     function getUsers($id_petugas)
     {
@@ -36,9 +37,9 @@ class Mod_users extends CI_Model {
     }
     
 
-    function deleteUsers($id_siswa, $table)
+    function deleteUsers($id_petugas, $table)
     {
-        $this->db->where('id_petugas', $id);
+        $this->db->where('id_petugas', $id_petugas);
         $this->db->delete($table);
     }
 
