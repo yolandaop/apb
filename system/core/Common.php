@@ -184,7 +184,7 @@ if ( ! function_exists('load_class'))
 			// Note: We use exit() rather than show_error() in order to avoid a
 			// self-referencing loop with the Exceptions class
 			set_status_header(503);
-			echo 'Unable to locate the specified class: '.$class.'.php';
+			print_r 'Unable to locate the specified class: '.$class.'.php';
 			exit(5); // EXIT_UNK_CLASS
 		}
 
@@ -257,7 +257,7 @@ if ( ! function_exists('get_config'))
 			elseif ( ! $found)
 			{
 				set_status_header(503);
-				echo 'The configuration file does not exist.';
+				print_r 'The configuration file does not exist.';
 				exit(3); // EXIT_CONFIG
 			}
 
@@ -265,7 +265,7 @@ if ( ! function_exists('get_config'))
 			if ( ! isset($config) OR ! is_array($config))
 			{
 				set_status_header(503);
-				echo 'Your config file does not appear to be formatted correctly.';
+				print_r 'Your config file does not appear to be formatted correctly.';
 				exit(3); // EXIT_CONFIG
 			}
 		}
@@ -414,7 +414,7 @@ if ( ! function_exists('show_error'))
 		}
 
 		$_error =& load_class('Exceptions', 'core');
-		echo $_error->show_error($heading, $message, 'error_general', $status_code);
+		print_r $_error->show_error($heading, $message, 'error_general', $status_code);
 		exit($exit_status);
 	}
 }

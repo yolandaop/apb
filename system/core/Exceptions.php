@@ -135,7 +135,7 @@ class CI_Exceptions {
 			log_message('error', $heading.': '.$page);
 		}
 
-		echo $this->show_error($heading, $message, 'error_404', 404);
+		print_r $this->show_error($heading, $message, 'error_404', 404);
 		exit(4); // EXIT_UNKNOWN_FILE
 	}
 
@@ -219,7 +219,7 @@ class CI_Exceptions {
 		include($templates_path.'error_exception.php');
 		$buffer = ob_get_contents();
 		ob_end_clean();
-		echo $buffer;
+		print_r $buffer;
 	}
 
 	// --------------------------------------------------------------------
@@ -268,7 +268,7 @@ class CI_Exceptions {
 		include($templates_path.$template.'.php');
 		$buffer = ob_get_contents();
 		ob_end_clean();
-		echo $buffer;
+		print_r $buffer;
 	}
 
 }

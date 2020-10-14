@@ -482,7 +482,7 @@ class CI_Output {
 
 		// Does the $CI object exist?
 		// If not we know we are dealing with a cache file so we'll
-		// simply echo out the data and exit.
+		// simply print_r out the data and exit.
 		if ( ! isset($CI))
 		{
 			if ($this->_compress_output === TRUE)
@@ -500,7 +500,7 @@ class CI_Output {
 				}
 			}
 
-			echo $output;
+			print_r $output;
 			log_message('info', 'Final output sent to browser');
 			log_message('debug', 'Total execution time: '.$elapsed);
 			return;
@@ -528,14 +528,14 @@ class CI_Output {
 		}
 
 		// Does the controller contain a function named _output()?
-		// If so send the output there.  Otherwise, echo it.
+		// If so send the output there.  Otherwise, print_r it.
 		if (method_exists($CI, '_output'))
 		{
 			$CI->_output($output);
 		}
 		else
 		{
-			echo $output; // Send it to the browser!
+			print_r $output; // Send it to the browser!
 		}
 
 		log_message('info', 'Final output sent to browser');

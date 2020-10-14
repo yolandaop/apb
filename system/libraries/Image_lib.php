@@ -1564,7 +1564,7 @@ class CI_Image_lib {
 				break;
 			case 3	:	imagepng($resource);
 				break;
-			default:	echo 'Unable to display the image';
+			default:	print_r 'Unable to display the image';
 				break;
 		}
 	}

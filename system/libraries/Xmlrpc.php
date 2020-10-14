@@ -1130,7 +1130,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 		// Display HTTP content for debugging
 		if ($this->debug === TRUE)
 		{
-			echo "<pre>---DATA---\n".htmlspecialchars($data)."\n---END DATA---\n\n</pre>";
+			print_r "<pre>---DATA---\n".htmlspecialchars($data)."\n---END DATA---\n\n</pre>";
 		}
 
 		// Check for data
@@ -1198,7 +1198,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 		{
 			if ($this->debug === TRUE)
 			{
-				echo "---Invalid Return---\n".$this->xh[$pname]['isf_reason']."---Invalid Return---\n\n";
+				print_r "---Invalid Return---\n".$this->xh[$pname]['isf_reason']."---Invalid Return---\n\n";
 			}
 
 			return new XML_RPC_Response(0, $this->xmlrpcerr['invalid_return'], $this->xmlrpcstr['invalid_return'].' '.$this->xh[$pname]['isf_reason']);
@@ -1211,21 +1211,21 @@ class XML_RPC_Message extends CI_Xmlrpc
 		// Display XML content for debugging
 		if ($this->debug === TRUE)
 		{
-			echo '<pre>';
+			print_r '<pre>';
 
 			if (count($this->xh[$pname]['headers']) > 0)
 			{
-				echo "---HEADERS---\n";
+				print_r "---HEADERS---\n";
 				foreach ($this->xh[$pname]['headers'] as $header)
 				{
-					echo $header."\n";
+					print_r $header."\n";
 				}
-				echo "---END HEADERS---\n\n";
+				print_r "---END HEADERS---\n\n";
 			}
 
-			echo "---DATA---\n".htmlspecialchars($data)."\n---END DATA---\n\n---PARSED---\n";
+			print_r "---DATA---\n".htmlspecialchars($data)."\n---END DATA---\n\n---PARSED---\n";
 			var_dump($this->xh[$pname]['value']);
-			echo "\n---END PARSED---</pre>";
+			print_r "\n---END PARSED---</pre>";
 		}
 
 		// Send response
@@ -1714,13 +1714,13 @@ class XML_RPC_Values extends CI_Xmlrpc
 
 		if ($this->mytype === 1)
 		{
-			echo '<strong>XML_RPC_Values</strong>: scalar can have only one value<br />';
+			print_r '<strong>XML_RPC_Values</strong>: scalar can have only one value<br />';
 			return 0;
 		}
 
 		if ($typeof != 1)
 		{
-			echo '<strong>XML_RPC_Values</strong>: not a scalar type (${typeof})<br />';
+			print_r '<strong>XML_RPC_Values</strong>: not a scalar type (${typeof})<br />';
 			return 0;
 		}
 
@@ -1758,7 +1758,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	{
 		if ($this->mytype !== 0)
 		{
-			echo '<strong>XML_RPC_Values</strong>: already initialized as a ['.$this->kindOf().']<br />';
+			print_r '<strong>XML_RPC_Values</strong>: already initialized as a ['.$this->kindOf().']<br />';
 			return 0;
 		}
 
@@ -1779,7 +1779,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	{
 		if ($this->mytype !== 0)
 		{
-			echo '<strong>XML_RPC_Values</strong>: already initialized as a ['.$this->kindOf().']<br />';
+			print_r '<strong>XML_RPC_Values</strong>: already initialized as a ['.$this->kindOf().']<br />';
 			return 0;
 		}
 		$this->mytype = $this->xmlrpcTypes['struct'];

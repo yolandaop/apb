@@ -462,7 +462,7 @@ $config['csrf_exclude_uris'] = array();
 | means you are prematurely outputting something to your browser. It could
 | even be a line of whitespace at the end of one of your scripts.  For
 | compression to work, nothing can be sent before the output buffer is called
-| by the output class.  Do not 'echo' any values with compression enabled.
+| by the output class.  Do not 'print_r' any values with compression enabled.
 |
 */
 $config['compress_output'] = FALSE;
