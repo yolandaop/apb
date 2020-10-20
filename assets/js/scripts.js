@@ -70,17 +70,6 @@
 
             });
 
-            $(".pc-epie-chart").easyPieChart({
-                onStep: function(from, to, percent) {
-                    $(this.el).find(".percent").text(Math.round(percent));
-                },
-                barColor: "#5bc6f0",
-                lineWidth: 3,
-                size:50,
-                trackColor: "#32323a",
-                scaleColor:"#cccccc"
-
-            });
 
         }
 
@@ -113,7 +102,7 @@
                         $spdata.minSpotColor = false;
                         $spdata.maxSpotColor = false;
                         $spdata.valueSpots = {
-                            '0:': $spdata.spotColor
+                            "0:": $spdata.spotColor
                         };
                         $(this).sparkline($(this).data("compositeData"), $spdata);
                     };
@@ -175,7 +164,7 @@
 
         /*==Collapsible==*/
         $(".widget-head").click(function (e) {
-            var widgetElem = $(this).children(".widget-collapse").children('i');
+            var widgetElem = $(this).children(".widget-collapse").children("i");
 
             $(this)
                 .next(".widget-container")
@@ -216,72 +205,47 @@
             });
 
             $("#sidebar").toggleClass("hide-left-bar");
-            if ($("#sidebar').hasClass('hide-left-bar')) {
+            if ($("#sidebar").hasClass("hide-left-bar")) {
                 $(".leftside-navigation").getNiceScroll().hide();
             }
             $(".leftside-navigation").getNiceScroll().show();
-            $('#main-content').toggleClass('merge-left');
+            $("#main-content").toggleClass("merge-left");
             e.stopPropagation();
-            if ($('#container').hasClass('open-right-panel')) {
-                $('#container').removeClass('open-right-panel')
+            if ($("#container").hasClass("open-right-panel")) {
+                $("#container").removeClass("open-right-panel")
             }
-            if ($('.right-sidebar').hasClass('open-right-bar')) {
-                $('.right-sidebar').removeClass('open-right-bar')
+            if ($(".right-sidebar").hasClass("open-right-bar")) {
+                $(".right-sidebar").removeClass("open-right-bar")
             }
 
-            if ($('.header').hasClass('merge-header')) {
-                $('.header').removeClass('merge-header')
+            if ($(".header").hasClass("merge-header")) {
+                $(".header").removeClass("merge-header")
             }
 
 
         });
-        $('.toggle-right-box .fa-bars').click(function (e) {
-            $('#container').toggleClass('open-right-panel');
-            $('.right-sidebar').toggleClass('open-right-bar');
-            $('.header').toggleClass('merge-header');
+        $(".toggle-right-box .fa-bars").click(function (e) {
+            $("#container").toggleClass("open-right-panel");
+            $(".right-sidebar").toggleClass("open-right-bar");
+            $(".header").toggleClass("merge-header");
 
             e.stopPropagation();
         });
 
-        $('.header,#main-content,#sidebar').click(function () {
-            if ($('#container').hasClass('open-right-panel')) {
-                $('#container').removeClass('open-right-panel')
-            }
-            if ($('.right-sidebar').hasClass('open-right-bar')) {
-                $('.right-sidebar').removeClass('open-right-bar')
-            }
-
-            if ($('.header').hasClass('merge-header')) {
-                $('.header').removeClass('merge-header')
-            }
+      
 
 
-        });
-
-
-        $('.panel .tools .fa').click(function () {
-            var el = $(this).parents(".panel").children(".panel-body");
-            if ($(this).hasClass("fa-chevron-down")) {
-                $(this).removeClass("fa-chevron-down").addClass("fa-chevron-up");
-                el.slideUp(200);
-            } else {
-                $(this).removeClass("fa-chevron-up").addClass("fa-chevron-down");
-                el.slideDown(200); }
-        });
-
-
-
-        $('.panel .tools .fa-times').click(function () {
+        $(".panel .tools .fa-times").click(function () {
             $(this).parents(".panel").parent().remove();
         });
 
         // tool tips
 
-        $('.tooltips').tooltip();
+        $(".tooltips").tooltip();
 
         // popovers
 
-        $('.popovers').popover();
+        $(".popovers").popover();
 
 
     });
