@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 
     public function index()
     {
-        if(isset($_POST['proses'])) {
+        if(isset(filter_input(INPUT_POST, 'proses'))) {
             
             //form validation
             $this->form_validation->set_rules('username', 'Username', 'required');

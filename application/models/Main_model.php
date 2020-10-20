@@ -9,8 +9,8 @@ class Main_model extends CI_Model {
             // Check user
             $this->db->select('*');
             $this->db->where('bibid', $record[0]);
-            $q = $this->db->get('buku');
-            $response = $q->result_array();
+            $query = $this->db->get('buku');
+            $response = $query->result_array();
             
             // Insert record
             if(count($response) == 0){
@@ -41,8 +41,8 @@ class Main_model extends CI_Model {
             // Check user
             $this->db->select('*');
             $this->db->where('nis', $record[0]);
-            $q = $this->db->get('anggota');
-            $response = $q->result_array();
+            $query = $this->db->get('anggota');
+            $response = $query->result_array();
             
             // Insert record
             if(count($response) == 0){

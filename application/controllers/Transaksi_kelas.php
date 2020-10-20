@@ -80,7 +80,7 @@ class transaksi_kelas extends CI_Controller {
                     $this->load->view('includes/header', $data );
                     $this->load->view('transaksi_kelas/data_peminjaman', $data);
                 }
-                else{
+                
                      $judul = slug($this->input->post('judul'));
                         $save  = array(
                             'id_transaksi' => $this->input->post('id_transaksi'),
@@ -105,7 +105,7 @@ class transaksi_kelas extends CI_Controller {
                         $data['id_petugas'] = $this->session->userdata['level'];
                         $this->load->view('includes/header', $data );
                         $this->load->view('transaksi_kelas/tampilan_peminjaman', $data);  
-                    }                   
+                                      
             }
             //jika tidak mengkosongkan form
             else{

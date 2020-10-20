@@ -17,7 +17,7 @@ class Siswa extends CI_Controller {
 	public function form(){
 		$data = array(); // Buat variabel $data sebagai array
 		
-		if(isset($_POST['preview'])){ // Jika user menekan tombol Preview pada form
+		if(isset(filter_input(INPUT_POST, 'preview'))){ // Jika user menekan tombol Preview pada form
 			// lakukan upload file dengan memanggil function upload yang ada di SiswaModel.php
 			$upload = $this->SiswaModel->upload_file($this->filename);
 			

@@ -132,7 +132,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
                                      
             }
             //jika tidak mengkosongkan form
-            else{
+            
                 $data['message'] = "";
                 $data['tglpinjam']  = date('Y-m-d');
                 $data['autonumber'] = $this->Mod_transaksi->AutoNumbering();
@@ -141,7 +141,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
                         $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
                 $this->load->view('transaksi/data_peminjaman', $data);
-            }
+            
 
         }
     }

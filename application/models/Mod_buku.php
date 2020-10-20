@@ -19,7 +19,7 @@ class Mod_buku extends CI_Model {
 		return $this->db->count_all_results($table);
     }
 
-    function totalEksemplar($table)
+    function totalEksemplar()
 	{
 		$this->db->select_sum('eksemplar');
         return $this->db->get("buku")->row('eksemplar');

@@ -35,7 +35,7 @@
 	</form>
 
 	<?php
-	if(isset($_POST['preview'])){ // Jika user menekan tombol Preview pada form
+	if(isset(filter_input(INPUT_POST, 'preview'))){ // Jika user menekan tombol Preview pada form
 		if(isset($upload_error)){ // Jika proses upload gagal
 			print_r "<div style='color: red;'>".$upload_error."</div>"; // Muncul pesan error upload
 			die; // stop skrip

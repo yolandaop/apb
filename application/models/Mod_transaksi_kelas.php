@@ -7,8 +7,7 @@ class Mod_transaksi_kelas extends CI_Model
 {
 
     private $table = "transaksi_kelas";
-    private $tmp   = "tmp";
-    
+ 
     function AutoNumbering()
     {
         $today = date('Ymd');

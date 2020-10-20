@@ -37,7 +37,7 @@ class Import extends CI_Controller {
 
      				// Reading file
                     $file = fopen("assets/files/".$filename,"r");
-                    $i = 0;
+                    $iterasi = 0;
 
                     $importData_arr = array();
                        
@@ -45,9 +45,9 @@ class Import extends CI_Controller {
                         $num = count($filedata);
 
                         for ($c=0; $c < $num; $c++) {
-                            $importData_arr[$i][] = $filedata[$c];
+                            $importData_arr[$iterasi][] = $filedata[$c];
                         }
-                        $i++;
+                        $iterasi++;
                     }
                     fclose($file);
 
@@ -64,19 +64,19 @@ class Import extends CI_Controller {
     			}
      				$data['response'] = 'failed'; 
     			
-   			}else{ 
+   			}
     			$data['response'] = 'failed'; 
-   			} 
+			}
 			   // load view 
 			   $data['id_petugas'] = $this->session->userdata['level'];
 			   $this->load->view('includes/header', $data );
    			$this->load->view('buku/import_buku',$data); 
-  		}else{
-			   // load view 
+  		
+		}	   // load view 
 			   $data['id_petugas'] = $this->session->userdata['level'];
 			   $this->load->view('includes/header', $data );
    				$this->load->view('buku/import_buku'); 
-  		} 
+  		 
 
 	}
 
@@ -103,7 +103,7 @@ class Import extends CI_Controller {
 
      				// Reading file
                     $file = fopen("assets/files/".$filename,"r");
-                    $i = 0;
+                    $iterasi = 0;
 
                     $importData_arr = array();
                        
@@ -111,9 +111,9 @@ class Import extends CI_Controller {
                         $num = count($filedata);
 
                         for ($c=0; $c < $num; $c++) {
-                            $importData_arr[$i][] = $filedata[$c];
+                            $importData_arr[$iterasi][] = $filedata[$c];
                         }
-                        $i++;
+                        $iterasi++;
                     }
                     fclose($file);
 

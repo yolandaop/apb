@@ -113,7 +113,7 @@ class Users extends CI_Controller {
 
     public function update()
     {
-        if(isset($_POST['update'])) {
+        if(isset(filter_input(INPUT_POST, 'update'))) {
         
             $this->_set_rules();
 

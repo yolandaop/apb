@@ -78,7 +78,7 @@ class Buku extends CI_Controller {
         $this->load->view('includes/header', $data );       
                     $this->load->view('buku/tambah_buku', $data); 
                 }
-                 else{
+                 
                            $save  = array(
                              'bibid'   => $this->input->post('bibid'),
                              'judul'       => $this->input->post('judul'),
@@ -99,7 +99,7 @@ class Buku extends CI_Controller {
                                  $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
                          $this->load->view('buku/tambah_buku', $data); 
-                     }
+                     
                    
             
             }
@@ -128,7 +128,7 @@ class Buku extends CI_Controller {
 
     public function update()
     {
-        if(isset($_POST['update'])) {
+        if(isset(filter_input(INPUT_POST, 'update'))) {
 
             // print_r "proses update"; die();
 
@@ -170,7 +170,7 @@ $this->load->view('buku/edit_buku', $data);
 
             //end empty $_FILES
 
-        } // end $_POST['update']
+        } // end filter_input(INPUT_POST, 'update')
     
     }
 
@@ -179,8 +179,6 @@ $this->load->view('buku/edit_buku', $data);
         // $nis  = $this->uri->segment(3);
 
         $bibid = $this->input->post('bibid');
-        //hapus gambar yg ada diserver
-        unlink('assets/img/buku/'.$gambar['image']);
 
         $this->Mod_buku->deleteBuku($bibid, 'buku');
         // print_r "berhasil"; die();
