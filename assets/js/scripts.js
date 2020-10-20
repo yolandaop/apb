@@ -3,29 +3,29 @@
     $(document).ready(function () {
         /*==Left Navigation Accordion ==*/
         if ($.fn.dcAccordion) {
-            $('#nav-accordion').dcAccordion({
-                eventType: 'click',
+            $("#nav-accordion").dcAccordion({
+                eventType: "click",
                 autoClose: true,
                 saveState: true,
                 disableLink: true,
-                speed: 'slow',
+                speed: "slow",
                 showCount: false,
                 autoExpand: true,
-                classExpand: 'dcjq-current-parent'
+                classExpand: "dcjq-current-parent"
             });
         }
         /*==Slim Scroll ==*/
         if ($.fn.slimScroll) {
-            $('.event-list').slimscroll({
-                height: '305px',
+            $(".event-list").slimscroll({
+                height: "305px",
                 wheelStep: 20
             });
-            $('.conversation-list').slimscroll({
-                height: '360px',
+            $(".conversation-list").slimscroll({
+                height: "360px",
                 wheelStep: 35
             });
-            $('.to-do-list').slimscroll({
-                height: '300px',
+            $(".to-do-list").slimscroll({
+                height: "300px",
                 wheelStep: 35
             });
         }
@@ -41,7 +41,7 @@
             });
 
             $(".leftside-navigation").getNiceScroll().resize();
-            if ($('#sidebar').hasClass('hide-left-bar')) {
+            if ($("#sidebar").hasClass("hide-left-bar")) {
                 $(".leftside-navigation").getNiceScroll().hide();
             }
             $(".leftside-navigation").getNiceScroll().show();
@@ -58,9 +58,9 @@
         /*==Easy Pie chart ==*/
         if ($.fn.easyPieChart) {
 
-            $('.notification-pie-chart').easyPieChart({
+            $(".notification-pie-chart").easyPieChart({
                 onStep: function (from, to, percent) {
-                    $(this.el).find('.percent').text(Math.round(percent));
+                    $(this.el).find(".percent").text(Math.round(percent));
                 },
                 barColor: "#39b6ac",
                 lineWidth: 3,
@@ -70,9 +70,9 @@
 
             });
 
-            $('.pc-epie-chart').easyPieChart({
+            $(".pc-epie-chart").easyPieChart({
                 onStep: function(from, to, percent) {
-                    $(this.el).find('.percent').text(Math.round(percent));
+                    $(this.el).find(".percent").text(Math.round(percent));
                 },
                 barColor: "#5bc6f0",
                 lineWidth: 3,
@@ -88,10 +88,10 @@
         if ($.fn.sparkline) {
 
             $(".d-pending").sparkline([3, 1], {
-                type: 'pie',
-                width: '40',
-                height: '40',
-                sliceColors: ['#e1e1e1', '#8175c9']
+                type: "pie",
+                width: "40",
+                height: "40",
+                sliceColors: ["#e1e1e1", "#8175c9"]
             });
 
 
@@ -99,11 +99,11 @@
             var sparkLine = function () {
                 $(".sparkline").each(function () {
                     var $data = $(this).data();
-                    ($data.type == 'pie') && $data.sliceColors && ($data.sliceColors = eval($data.sliceColors));
-                    ($data.type == 'bar') && $data.stackedBarColor && ($data.stackedBarColor = eval($data.stackedBarColor));
+                    ($data.type === "pie") && $data.sliceColors && ($data.sliceColors = eval($data.sliceColors));
+                    ($data.type === "bar") && $data.stackedBarColor && ($data.stackedBarColor = eval($data.stackedBarColor));
 
                     $data.valueSpots = {
-                        '0:': $data.spotColor
+                        "0:": $data.spotColor
                     };
                     $(this).sparkline($data.data || "html", $data);
 
@@ -149,7 +149,7 @@
                         },
                         stroke: {
                             width: .01,
-                            color: '#fff'
+                            color: "#fff"
 
                         }
                     }
@@ -174,18 +174,18 @@
 
 
         /*==Collapsible==*/
-        $('.widget-head').click(function (e) {
-            var widgetElem = $(this).children('.widget-collapse').children('i');
+        $(".widget-head").click(function (e) {
+            var widgetElem = $(this).children(".widget-collapse").children('i');
 
             $(this)
-                .next('.widget-container')
-                .slideToggle('slow');
-            if ($(widgetElem).hasClass('ico-minus')) {
-                $(widgetElem).removeClass('ico-minus');
-                $(widgetElem).addClass('ico-plus');
+                .next(".widget-container")
+                .slideToggle("slow");
+            if ($(widgetElem).hasClass("ico-minus")) {
+                $(widgetElem).removeClass("ico-minus");
+                $(widgetElem).addClass("ico-plus");
             } else {
-                $(widgetElem).removeClass('ico-plus');
-                $(widgetElem).addClass('ico-minus');
+                $(widgetElem).removeClass("ico-plus");
+                $(widgetElem).addClass("ico-minus");
             }
             e.preventDefault();
         });
@@ -206,7 +206,7 @@
 
 
 
-        $('.sidebar-toggle-box .fa-bars').click(function (e) {
+        $(".sidebar-toggle-box .fa-bars").click(function (e) {
 
             $(".leftside-navigation").niceScroll({
                 cursorcolor: "#1FB5AD",
@@ -215,8 +215,8 @@
                 cursorwidth: "3px"
             });
 
-            $('#sidebar').toggleClass('hide-left-bar');
-            if ($('#sidebar').hasClass('hide-left-bar')) {
+            $("#sidebar").toggleClass("hide-left-bar");
+            if ($("#sidebar').hasClass('hide-left-bar')) {
                 $(".leftside-navigation").getNiceScroll().hide();
             }
             $(".leftside-navigation").getNiceScroll().show();
