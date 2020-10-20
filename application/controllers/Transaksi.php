@@ -81,7 +81,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
 
     public function simpan()
     {
-        if(isset($_POST['save'])) {
+        if(isset(filter_input(INPUT_POST, 'save'))) {
 
             //function validasi
             $this->_set_rules();
@@ -106,7 +106,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
                     $this->load->view('includes/header', $data );
                     $this->load->view('transaksi/data_peminjaman', $data);
                 }
-                else{
+                
                         $save  = array(
                             'id_transaksi' => $this->input->post('id_transaksi'),
                             'bibid' => $this->input->post('bibid'),
@@ -129,7 +129,7 @@ $this->load->view('transaksi/tampilan_peminjaman', $data);
                                  $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
                          $this->load->view('transaksi/tampilan_peminjaman', $data); 
-                    }                    
+                                     
             }
             //jika tidak mengkosongkan form
             else{

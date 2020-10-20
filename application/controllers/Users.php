@@ -58,7 +58,7 @@ class Users extends CI_Controller {
 
     public function insert()
     {
-        if(isset($_POST['save'])) {
+        if(isset(filter_input(INPUT_POST, 'save'))) {
         
             //function validasi
             $this->_set_rules();
@@ -97,7 +97,7 @@ class Users extends CI_Controller {
             $this->load->view('users/users_create'); 
             } 
 
-        } //end $_POST['save']
+        } //end filter_input(INPUT_POST, 'save')
     }
 
     public function edit($id_user)

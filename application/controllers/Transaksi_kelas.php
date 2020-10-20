@@ -23,12 +23,12 @@ class transaksi_kelas extends CI_Controller {
         $this->load->view('includes/header', $data );
             $this->load->view('transaksi_kelas/tampilan_peminjaman', $data);  
         }
-        else{
+        
             $data['message'] = "";
                     $data['id_petugas'] = $this->session->userdata['level'];
         $this->load->view('includes/header', $data );
             $this->load->view('transaksi_kelas/tampilan_peminjaman', $data);  
-        }
+        
         
     }
 
@@ -56,7 +56,7 @@ class transaksi_kelas extends CI_Controller {
 
     public function simpan()
     {
-        if(isset($_POST['save'])) {
+        if(isset(filter_input(INPUT_POST, 'save'))) {
 
             //function validasi
             $this->_set_rules();

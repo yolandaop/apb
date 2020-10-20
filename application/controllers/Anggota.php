@@ -67,7 +67,7 @@ class Anggota extends CI_Controller {
 
     public function insert()
     {
-        if(isset($_POST['save'])) {
+        if(isset(filter_input(INPUT_POST, 'save'))) {
             
             $this->_set_rules();
 

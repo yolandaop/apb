@@ -61,9 +61,9 @@ class Import extends CI_Controller {
                         $skip ++;
                     }
      				$data['response'] = 'successfully uploaded '.$filename; 
-    			}else{ 
+    			}
      				$data['response'] = 'failed'; 
-    			} 
+    			
    			}else{ 
     			$data['response'] = 'failed'; 
    			} 
